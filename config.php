@@ -1,9 +1,17 @@
 <?php
+	include "general.php";
 
-	define('DB_USER','root');
-   	define('DB_SENHA','');
-   	define('DB_HOST','localhost');
-   	define('DB_NOME','framework');
+	$config = array(
+		'DB_USER' => 'root',
+		'DB_SENHA' => '',
+		'DB_HOST' => 'localhost',
+		'DB_NOME' => 'flash-framework',
+	);
 
-	if ( !defined('HOME_URL') )
-		define('ABSPATH', dirname(__FILE__) . '/');
+	function path() {
+		$path = dirname(__FILE__) . '/';
+		$path = str_replace('\\', "/", $path);
+		echo $path;
+	}
+
+	global $config;

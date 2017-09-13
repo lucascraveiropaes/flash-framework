@@ -1,3 +1,7 @@
 <?php
+	include 'admin/functions.php';
 
-	echo "View";
+	head();
+
+	echo "<h1>View</h1>";
+?>
