@@ -1,11 +1,17 @@
+<?php include '../../model/User.php'; ?>
 <?php include 'functions.php'; ?>
+<?php include 'seguranca.php';?>
+
+<?php
+    $user = $_SESSION["login"]["user"];
+?>
 
 <?php head(); ?>
     <body>
         <div class="wrapper">
             <?php sidebar(1) ?>
             <div class="main-panel">
-                <?php menu_bar() ?>
+                <?php menu_bar($user) ?>
                 <div class="content">
                     <div class="container-fluid">
                         <div class="row">

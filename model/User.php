@@ -9,8 +9,12 @@
 	    private $login;
 	    private $password;
 	    private $user_type;
-	    private $last_;
+	    private $last_access;
 	    private $creation_date;
+
+	    public function getFullName() {
+	    	return $this->getFirst_name() . " " . $this->getLast_name();
+	    }
 
         // User ID Functions
 	    public function getId() {
@@ -82,7 +86,7 @@
 	    }
 	    public function setCreation_date($creation_date) {
             $this->creation_date = $creation_date;
-        }
+        } 
 
 	}
 

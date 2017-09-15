@@ -21,7 +21,7 @@
 
 	    private function openDB() {
 			try {
-				$this->conexao = new mysqli($this->host, $this->user, $this->password, $this->name);
+				$this->connection = new mysqli($this->host, $this->user, $this->password, $this->name);
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}

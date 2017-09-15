@@ -1,14 +1,14 @@
 <?php include 'functions.php'; ?>
 
 <?php head(); ?>
-    <body>
+    <body>  
         <div class="wrapper">
             <div class="header header-filter" id="login">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
                             <div class="card">
-                                <form class="form" method="post" action="../../controller/login.php">
+                                <form class="form" method="post" action="../../controller/login.php" autocomplete="off">
                                     <div class="card-header header-primary text-center" data-background-color="red">
                                         <h4>Login</h4>
                                     </div>
@@ -32,6 +32,20 @@
                                     </div>
                                 </form>
                             </div>
+                            <?php
+                                if(isset($_SESSION["login"]))
+                                {
+                                    $login = $_SESSION["login"]; 
+
+                                    if($login["message"]) { ?>
+                                        <div class="alert alert-danger">
+                                            <span style="text-align: center;">
+                                                <?php echo $login["message"]; ?>
+                                            </span>
+                                        </div> <?php
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
